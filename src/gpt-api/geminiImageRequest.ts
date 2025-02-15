@@ -1,8 +1,5 @@
+import { getGeminiResponseText } from "../helpers/getResponseText";
 import { GeminiSuccessResponse, Message } from "../types/index";
-
-const getGeminiResponseText = (data: GeminiSuccessResponse) => {
-  return data.choices[0]?.message.content || null;
-};
 
 export const geminiFlashRequest = async (messages: Message[]) => {
   try {

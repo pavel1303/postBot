@@ -6,9 +6,10 @@ import {
   PhotoMediaGroupContext,
 } from "@dietime/telegraf-media-group";
 import { getPhotosUrlsFromUpdate } from "./helpers/getPhotosFromPost";
-import { geminiFlashRequest } from "./gpt-api/geminiRequests";
+import { geminiFlashRequest } from "./gpt-api/geminiImageRequest";
 import { createPromtForReportMeal } from "./prompt-generate/createPromptForReportMeal";
 import { createMeal } from "./database/createMeal";
+import { getMealsDescription } from "./helpers/getMealsDescription";
 
 dotenv.config();
 
@@ -32,6 +33,16 @@ bot.on(photo_media_group(), async (ctx: PhotoMediaGroupContext<Context>) => {
     await ctx.reply(
       `Все отлично, получилась такоя вот красота:\n${modelResponse}`
     );
+  } else {
+    await ctx.reply(`Пу пу пууууу.... Что то не зашло :(`);
+  }
+});
+
+bot.command("create_post", async (ctx: Context) => {
+  const mealsDescription = await getMealsDescription();
+
+  if (mealsDescription) {
+    await ctx.reply(`Вот твой отчет за день:\n\n${mealsDescription}`);
   } else {
     await ctx.reply(`Пу пу пууууу.... Что то не зашло :(`);
   }

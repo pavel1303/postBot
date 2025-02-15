@@ -1,6 +1,13 @@
-export type Role = "user" | "system" | "assistant";
+export enum Role {
+  USER = "user",
+  SYSTEM = "system",
+  ASSISTANT = "assistant",
+}
 
-export type ContentType = "text" | "image_url";
+export enum ContentType {
+  TEXT = "text",
+  IMAGE_URL = "image_url",
+}
 
 export type TextContent = {
   type: ContentType;
@@ -40,4 +47,10 @@ export type GeminiSuccessResponse = {
     completion_tokens: number;
     total_tokens: number;
   };
+};
+
+export type Meal = {
+  date: string;
+  photoIds: string[];
+  description: string;
 };
