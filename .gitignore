@@ -1,0 +1,30 @@
+# Игнорировать папку node_modules
+node_modules/
+
+# Игнорировать файлы сборки (если есть)
+dist/
+build/
+
+# Игнорировать файлы среды выполнения
+.env
+.env.local
+.env.development
+.env.production
+
+# Игнорировать config базы данных
+fbsettings.json
+
+# Игнорировать временные файлы и кэш
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+.pnp.*
+.cache/
+
+# Игнорировать файлы IDE (опционально, но часто используются)
+.vscode/
+.idea/
+
+# Игнорировать файлы системы
+.DS_Store
+Thumbs.db

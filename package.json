@@ -1,0 +1,32 @@
+{
+  "name": "postbot",
+  "version": "1.0.0",
+  "description": "Bot for creating posts my telegram channel",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "rimraf ./build && tsc",
+    "start": "npm run build && node build/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pavel1303/postBot.git"
+  },
+  "author": "Lebedev Pavel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pavel1303/postBot/issues"
+  },
+  "homepage": "https://github.com/pavel1303/postBot#readme",
+  "dependencies": {
+    "@dietime/telegraf-media-group": "^1.0.5",
+    "dotenv": "^16.4.7",
+    "firebase-admin": "^13.0.2",
+    "telegraf": "^4.16.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.10",
+    "rimraf": "^6.0.1",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.7.3"
+  }
+}
